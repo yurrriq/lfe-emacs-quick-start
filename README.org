@@ -1,0 +1,19 @@
+* LFE + Emacs Quick Start
+Getting started with [[http://lfe.io][LFE]] in [[https://www.gnu.org/software/emacs/][Emacs]].
+
+** TODO Getting Started with Emacs
+*** TODO Overview
+A brief overview of Emacs wrt developing with LFE.
+**** Links
+- [[https://www.gnu.org/software/emacs/refcards/][Reference Card]]
+- [[https://leanpub.com/fullstacklisp/read][Full Stack Lisp: Chapter 3]]
+*** TODO Terms
+A glossary of terms used, perhaps with links for further exploration.
+** TODO lfe-mode
+An overiew of =lfe-mode= and customizations a user can and might want to make.
+** TODO inferior-lfe
+An introduction to =inferior-lfe=, including caveats and best practices.
+** TODO Productivity Tips
+
+* Credits
+Thanks to [[https://github.com/nazarsh][@nazarsh]] for the idea, outline and links to inspiration.
