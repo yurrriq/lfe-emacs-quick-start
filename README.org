@@ -9,7 +9,7 @@ A brief overview of Emacs wrt developing with LFE.
 - [[https://leanpub.com/fullstacklisp/read][Full Stack Lisp: Chapter 3]]
 *** TODO Terms
 A glossary of terms used, perhaps with links for further exploration.
-** TODO lfe-mode
+** TODO [[file:section/lfe-mode.org][lfe-mode]]
 An overiew of =lfe-mode= and customizations a user can and might want to make.
 ** TODO inferior-lfe
 An introduction to =inferior-lfe=, including caveats and best practices.

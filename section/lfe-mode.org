@@ -1,0 +1,54 @@
+* lfe-mode
+[[https://melpa.org/#/lfe-mode][file:https://melpa.org/packages/lfe-mode-badge.svg]]
+
+** Installation
+=lfe-mode= can be installed from [[https://melpa.org][MELPA]]:
+#+BEGIN_EXAMPLE
+M-x package-install RET lfe-mode RET
+#+END_EXAMPLE
+
+Or, if you're like me and have a local copy of [[https://github.com/rvirding/lfe][lfe]]:
+#+BEGIN_SRC emacs-lisp
+(defvar lfe-dir (concat (getenv "HOME") "/path/to/lfe/emacs"))
+
+(add-to-list 'load-path lfe-dir)
+
+(require 'lfe-mode)
+#+END_SRC
+
+** Configuration
+*** Hooks
+Personally, I like [[https://melpa.org/#/paredit][paredit]], [[https://melpa.org/#/rainbow-delimiters][rainbow-delimiters]] and [[https://melpa.org/#/auto-complete][auto-complete]], but the same
+strategy applies for any hook you might want.
+#+BEGIN_SRC emacs-lisp
+(dolist (func '(paredit-mode rainbow-delimiters-mode auto-complete-mode))
+  (add-hook 'lfe-mode-hook func))
+#+END_SRC
+
+*** Indentation
+=lfe-mode= includes and indentation helper function, inspired by the one in
+[[https://melpa.org/#/clojure-mode][clojure-mode]], =define-lfe-indent=. A number of core forms already have
+indentation rules, but often you might want to define your own, for a custom
+function or for modified handling of a core form.
+
+For example, here are some indentation rules I define in [[https://github.com/yurrriq/dotfiles/blob/emacs/lisp/init-lfe.el][my =.emacs=]] for working
+with [[https://github.com/lfex/exemplar][exemplar]].
+#+BEGIN_SRC emacs-lisp
+(define-lfe-indent
+  ;; exemplar
+  (body    0)
+  (div     1)
+  (div     'defun)
+  (head    0)
+  (html    'defun)
+  (link-to 1)
+  (pre     1)
+  (span    'defun)
+  (ul      0))
+#+END_SRC
+
+N.B. I have quite a few local changes to my Emacs config that have yet to make
+it to GitHub, but I'll try to push soon.
+
+**** Tasks
+***** TODO Update my [[https://github.com/yurrriq/dotfiles/blob/emacs/lisp/init-lfe.el][LFE-related dotfiles]] on GitHub
